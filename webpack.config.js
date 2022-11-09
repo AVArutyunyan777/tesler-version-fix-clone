@@ -1,30 +1,35 @@
-const { resolve } = require("path");
-const HtmlWebpackPlugin = require("html-webpack-plugin");
-const TerserWebpackPlugin = require("terser-webpack-plugin");
+// eslint-disable-next-line @typescript-eslint/no-var-requires
+const { resolve } = require('path');
+// eslint-disable-next-line @typescript-eslint/no-var-requires
+const HtmlWebpackPlugin = require('html-webpack-plugin');
+// eslint-disable-next-line @typescript-eslint/no-var-requires
+const TerserWebpackPlugin = require('terser-webpack-plugin');
 
-const isProd = process.env.NODE_ENV === "production";
+// eslint-disable-next-line no-undef
+const isProd = process.env.NODE_ENV === 'production';
 const config = {
-    mode: isProd ? "production" : "development",
+    mode: isProd ? 'production' : 'development',
     entry: {
-        index: "./src/index.tsx",
+        index: './src/index.tsx',
     },
     output: {
-        path: resolve(__dirname, "dist"),
-        filename: "bundle.js",
+        // eslint-disable-next-line no-undef
+        path: resolve(__dirname, 'dist'),
+        filename: '[name].js',
     },
     resolve: {
-        extensions: [".js", ".jsx", ".ts", ".tsx"],
+        extensions: ['.js', '.jsx', '.ts', '.tsx'],
     },
     module: {
         rules: [
             {
                 test: /\.tsx?$/,
-                use: "babel-loader",
+                use: 'babel-loader',
                 exclude: /node_modules/,
             },
             {
                 test: /\.js?$/,
-                use: "babel-loader",
+                use: 'babel-loader',
                 exclude: /node_modules/,
             },
             {
@@ -36,7 +41,7 @@ const config = {
                 use: [
                     'css-loader',
                     {
-                        loader: "less-loader",
+                        loader: 'less-loader',
                         options: {
                             lessOptions: {
                                 javascriptEnabled: true
@@ -49,11 +54,12 @@ const config = {
     },
     plugins: [
         new HtmlWebpackPlugin({
-            template: "./src/index.html",
-            filename: "index.html",
-            inject: "body",
+            template: './src/index.html',
+            filename: 'index.html',
+            inject: 'body',
         }),
     ],
 };
 
+// eslint-disable-next-line no-undef
 module.exports = config;

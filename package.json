@@ -1,11 +1,12 @@
 {
   "name": "tesler-version-fix-clone",
-  "version": "1.0.5",
+  "version": "1.0.6",
   "description": "",
   "main": "index.js",
   "scripts": {
     "dev": "cross-env NODE_ENV=development webpack-dev-server",
     "build": "cross-env NODE_ENV=production webpack",
+    "build:ts": "rimraf dist && tsc -p tsconfig.build.json",
     "start": "serve dist",
     "lint": "eslint src/**/*.{js,jsx,ts,tsx,json}",
     "lint:fix": "eslint --fix 'src/**/*.{js,jsx,ts,tsx,json}'",
@@ -72,6 +73,7 @@
     "less-loader": "^7.3.0",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
+    "rimraf": "^3.0.2",
     "style-loader": "^3.3.1"
   }
 }
