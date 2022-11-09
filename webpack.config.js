@@ -1,18 +1,31 @@
-// eslint-disable-next-line @typescript-eslint/no-var-requires
-const path = require("path");
+const { resolve } = require("path");
+const HtmlWebpackPlugin = require("html-webpack-plugin");
+const TerserWebpackPlugin = require("terser-webpack-plugin");
 
+const isProd = process.env.NODE_ENV === "production";
 const config = {
-    mode: 'development',
-    entry: './src/index.tsx',
-    devtool: "inline-source-map",
+    mode: isProd ? "production" : "development",
+    entry: {
+        index: "./src/index.tsx",
+    },
+    output: {
+        path: resolve(__dirname, "dist"),
+        filename: "bundle.js",
+    },
+    resolve: {
+        extensions: [".js", ".jsx", ".ts", ".tsx"],
+    },
     module: {
         rules: [
             {
-                test: /\.([cm]?ts|tsx)$/,
-                loader: "ts-loader",
-                options: {
-                    transpileOnly: true
-                }
+                test: /\.tsx?$/,
+                use: "babel-loader",
+                exclude: /node_modules/,
+            },
+            {
+                test: /\.js?$/,
+                use: "babel-loader",
+                exclude: /node_modules/,
             },
             {
                 test: /\.css$/,
@@ -20,29 +33,27 @@ const config = {
             },
             {
                 test: /\.less$/,
-                use: ['style-loader', 'css-loader', 'less-loader'],
+                use: [
+                    'css-loader',
+                    {
+                        loader: "less-loader",
+                        options: {
+                            lessOptions: {
+                                javascriptEnabled: true
+                            },
+                        },
+                    },
+                ],
             },
         ],
     },
-    resolve: {
-        extensions: [".ts", ".tsx", ".js"]
-    },
-    optimization: {
-        removeAvailableModules: false,
-        removeEmptyChunks: false,
-        splitChunks: false,
-    },
-    devServer: {
-        port: 8080,
-        // open: true,
-        hot: true,
-        inline: true,
-        historyApiFallback: true,
-    },
-    output: {
-        path: path.join(__dirname, '/dist'),
-        filename: 'bundle.js',
-        publicPath: '/'
-    },
+    plugins: [
+        new HtmlWebpackPlugin({
+            template: "./src/index.html",
+            filename: "index.html",
+            inject: "body",
+        }),
+    ],
 };
+
 module.exports = config;
