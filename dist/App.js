@@ -1,15 +1,4 @@
 "use strict";
-var __rest = (this && this.__rest) || function (s, e) {
-    var t = {};
-    for (var p in s) if (Object.prototype.hasOwnProperty.call(s, p) && e.indexOf(p) < 0)
-        t[p] = s[p];
-    if (s != null && typeof Object.getOwnPropertySymbols === "function")
-        for (var i = 0, p = Object.getOwnPropertySymbols(s); i < p.length; i++) {
-            if (e.indexOf(p[i]) < 0 && Object.prototype.propertyIsEnumerable.call(s, p[i]))
-                t[p[i]] = s[p[i]];
-        }
-    return t;
-};
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.PreviewWidget = void 0;
 const react_1 = require("react");
@@ -19,11 +8,6 @@ const antd_1 = require("@formily/antd");
 const core_1 = require("@formily/core");
 const react_2 = require("@formily/react");
 const antd_2 = require("antd");
-const Text = (_a) => {
-    var { value, mode, content } = _a, props = __rest(_a, ["value", "mode", "content"]);
-    const tagName = mode === 'normal' || !mode ? 'div' : mode;
-    return react_1.default.createElement(tagName, props, value || content);
-};
 const SchemaField = (0, react_2.createSchemaField)({
     components: {
         Space: antd_1.Space,
@@ -39,7 +23,6 @@ const SchemaField = (0, react_2.createSchemaField)({
         Cascader: antd_1.Cascader,
         Editable: antd_1.Editable,
         Input: antd_1.Input,
-        Text,
         NumberPicker: antd_1.NumberPicker,
         Switch: antd_1.Switch,
         Password: antd_1.Password,

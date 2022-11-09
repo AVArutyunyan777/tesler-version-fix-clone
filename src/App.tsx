@@ -39,14 +39,14 @@ export interface PreviewWidgetProps {
     tree: IFormilySchema
 }
 
-const Text: React.FC<{
-    value?: string;
-    content?: string;
-    mode?: 'normal' | 'h1' | 'h2' | 'h3' | 'p';
-}> = ({ value, mode, content, ...props }) => {
-    const tagName = mode === 'normal' || !mode ? 'div' : mode;
-    return React.createElement(tagName, props, value || content);
-};
+// const Text: React.FC<{
+//     value?: string;
+//     content?: string;
+//     mode?: 'normal' | 'h1' | 'h2' | 'h3' | 'p';
+// }> = ({ value, mode, content, ...props }) => {
+//     const tagName = mode === 'normal' || !mode ? 'div' : mode;
+//     return React.createElement(tagName, props, value || content);
+// };
 
 const SchemaField = createSchemaField({
     components: {
@@ -63,7 +63,6 @@ const SchemaField = createSchemaField({
         Cascader,
         Editable,
         Input,
-        Text,
         NumberPicker,
         Switch,
         Password,
