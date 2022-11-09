@@ -1,6 +1,6 @@
 import React, {CSSProperties, useMemo} from 'react';
 import 'antd/dist/antd.min.css';
-import './App.css';
+// import './App.css';
 import {
     Form,
     FormItem,
