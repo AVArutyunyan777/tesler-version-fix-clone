@@ -39,7 +39,7 @@ const config = {
             {
                 test: /\.less$/,
                 use: [
-                    'css-loader',
+                    'style-loader','css-loader',
                     {
                         loader: 'less-loader',
                         options: {
