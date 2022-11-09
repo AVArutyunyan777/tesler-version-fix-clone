@@ -1,6 +1,6 @@
 import React, {CSSProperties, useMemo} from 'react';
 import 'antd/dist/antd.min.css';
-// import './App.css';
+import GlobalStyle from './globalStyles';
 import {
     Form,
     FormItem,
@@ -35,8 +35,8 @@ import {createSchemaField, SchemaProperties} from '@formily/react';
 import { Card, Slider, Rate } from 'antd';
 
 
-export interface Props {
-    tree: any
+export interface PreviewWidgetProps {
+    tree: IFormilySchema
 }
 
 const Text: React.FC<{
@@ -82,7 +82,7 @@ const SchemaField = createSchemaField({
     },
 })
 
-export const PreviewWidget: React.FC<Props> = (props) => {
+export const PreviewWidget: React.FC<PreviewWidgetProps> = (props) => {
     const form = useMemo(() => createForm(), []);
     // const { form: formProps, schema } = props.tree
     const formProps: any = props.tree.form
@@ -534,7 +534,11 @@ const fromData = {
 }
 
 const Preview: React.FC = () => {
-    return <PreviewWidget tree={fromData} />
+
+    return <>
+        <GlobalStyle />
+        <PreviewWidget tree={fromData} />
+    </>
 };
 
 export default Preview;
