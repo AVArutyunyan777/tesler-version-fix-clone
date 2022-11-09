@@ -35,8 +35,8 @@ import {createSchemaField, SchemaProperties} from '@formily/react';
 import { Card, Slider, Rate } from 'antd';
 
 
-export interface IPreviewWidgetProps {
-    tree: IFormilySchema
+export interface Props {
+    tree: any
 }
 
 const Text: React.FC<{
@@ -82,7 +82,7 @@ const SchemaField = createSchemaField({
     },
 })
 
-export const PreviewWidget: React.FC<IPreviewWidgetProps> = (props) => {
+export const PreviewWidget: React.FC<Props> = (props) => {
     const form = useMemo(() => createForm(), []);
     // const { form: formProps, schema } = props.tree
     const formProps: any = props.tree.form
