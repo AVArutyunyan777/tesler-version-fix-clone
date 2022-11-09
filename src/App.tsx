@@ -535,10 +535,12 @@ const fromData = {
 
 const Preview: React.FC = () => {
 
-    return <>
-        <GlobalStyle />
-        <PreviewWidget tree={fromData} />
-    </>
+    return (
+        <div>
+            <GlobalStyle />
+            <PreviewWidget tree={fromData} />
+        </div>
+    )
 };
 
 export default Preview;

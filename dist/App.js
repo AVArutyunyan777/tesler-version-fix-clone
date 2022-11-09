@@ -491,9 +491,9 @@ const fromData = {
     }
 };
 const Preview = () => {
-    return react_1.default.createElement(react_1.default.Fragment, null,
+    return (react_1.default.createElement("div", null,
         react_1.default.createElement(globalStyles_1.default, null),
-        react_1.default.createElement(exports.PreviewWidget, { tree: fromData }));
+        react_1.default.createElement(exports.PreviewWidget, { tree: fromData })));
 };
 exports.default = Preview;
 //# sourceMappingURL=App.js.map
