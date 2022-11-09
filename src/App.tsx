@@ -31,7 +31,7 @@ import {
 } from '@formily/antd';
 import {IFormilySchema} from '@designable/formily-transformer';
 import {createForm} from '@formily/core';
-import {createSchemaField} from '@formily/react';
+import {createSchemaField, SchemaProperties} from '@formily/react';
 import { Card, Slider, Rate } from 'antd';
 
 
@@ -86,7 +86,7 @@ export const PreviewWidget: React.FC<IPreviewWidgetProps> = (props) => {
     const form = useMemo(() => createForm(), []);
     // const { form: formProps, schema } = props.tree
     const formProps: any = props.tree.form
-    const schema = props.tree.schema
+    const schema: SchemaProperties<any, any, any, any, any, any, any, any> = props.tree.schema as SchemaProperties<any, any, any, any, any, any, any, any>
     console.log(formProps)
     console.log(form)
     console.log(schema)
