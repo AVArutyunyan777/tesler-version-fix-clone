@@ -1,4 +1,4 @@
-import React, {CSSProperties, useMemo} from 'react';
+import * as React from 'react'
 import 'antd/dist/antd.min.css';
 import GlobalStyle from './globalStyles';
 import {
@@ -82,7 +82,7 @@ const SchemaField = createSchemaField({
 })
 
 export const PreviewWidget: React.FC<PreviewWidgetProps> = (props) => {
-    const form = useMemo(() => createForm(), []);
+    const form = React.useMemo(() => createForm(), []);
     // const { form: formProps, schema } = props.tree
     const formProps: any = props.tree.form
     const schema: SchemaProperties<any, any, any, any, any, any, any, any> = props.tree.schema as SchemaProperties<any, any, any, any, any, any, any, any>
@@ -107,7 +107,7 @@ export const PreviewWidget: React.FC<PreviewWidgetProps> = (props) => {
 
 export interface FormViewComponentProps {
     initialJson: IFormilySchema
-    style?: CSSProperties
+    style?: React.CSSProperties
 }
 
 const fromData = {

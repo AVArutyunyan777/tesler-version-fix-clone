@@ -1,14 +1,14 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.PreviewWidget = void 0;
-const react_1 = require("react");
+const React = require("react");
 require("antd/dist/antd.min.css");
 const globalStyles_1 = require("./globalStyles");
 const antd_1 = require("@formily/antd");
 const core_1 = require("@formily/core");
-const react_2 = require("@formily/react");
+const react_1 = require("@formily/react");
 const antd_2 = require("antd");
-const SchemaField = (0, react_2.createSchemaField)({
+const SchemaField = (0, react_1.createSchemaField)({
     components: {
         Space: antd_1.Space,
         FormGrid: antd_1.FormGrid,
@@ -41,15 +41,15 @@ const SchemaField = (0, react_2.createSchemaField)({
     },
 });
 const PreviewWidget = (props) => {
-    const form = (0, react_1.useMemo)(() => (0, core_1.createForm)(), []);
+    const form = React.useMemo(() => (0, core_1.createForm)(), []);
     const formProps = props.tree.form;
     const schema = props.tree.schema;
     console.log(formProps);
     console.log(form);
     console.log(schema);
-    return (react_1.default.createElement("div", null,
-        react_1.default.createElement(antd_1.Form, Object.assign({}, formProps, { form: form }),
-            react_1.default.createElement(SchemaField, { schema: schema }))));
+    return (React.createElement("div", null,
+        React.createElement(antd_1.Form, Object.assign({}, formProps, { form: form }),
+            React.createElement(SchemaField, { schema: schema }))));
 };
 exports.PreviewWidget = PreviewWidget;
 const fromData = {
@@ -474,9 +474,9 @@ const fromData = {
     }
 };
 const Preview = () => {
-    return (react_1.default.createElement("div", null,
-        react_1.default.createElement(globalStyles_1.default, null),
-        react_1.default.createElement(exports.PreviewWidget, { tree: fromData })));
+    return (React.createElement("div", null,
+        React.createElement(globalStyles_1.default, null),
+        React.createElement(exports.PreviewWidget, { tree: fromData })));
 };
 exports.default = Preview;
 //# sourceMappingURL=App.js.map

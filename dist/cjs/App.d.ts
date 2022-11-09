@@ -1,4 +1,4 @@
-import React, { CSSProperties } from 'react';
+import * as React from 'react';
 import 'antd/dist/antd.min.css';
 import { IFormilySchema } from '@designable/formily-transformer';
 export interface PreviewWidgetProps {
@@ -7,7 +7,7 @@ export interface PreviewWidgetProps {
 export declare const PreviewWidget: React.FC<PreviewWidgetProps>;
 export interface FormViewComponentProps {
     initialJson: IFormilySchema;
-    style?: CSSProperties;
+    style?: React.CSSProperties;
 }
 declare const Preview: React.FC;
 export default Preview;
