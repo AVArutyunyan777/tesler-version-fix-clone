@@ -533,8 +533,8 @@ const fromData = {
     }
 }
 
-const App: React.FC = () => {
+const Preview: React.FC = () => {
     return <PreviewWidget tree={fromData} />
 };
 
-export default App;
+export default Preview;
