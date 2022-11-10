@@ -1,23 +1,23 @@
-{
-  "compilerOptions": {
-    "module": "commonjs",
-    "removeComments": true,
-    "emitDecoratorMetadata": true,
-    "experimentalDecorators": true,
-    "target": "es2017",
-    "sourceMap": true,
-    "outDir": "./dist",
-    "baseUrl": "./",
-    "incremental": true,
-    "skipLibCheck": true,
-    "strictNullChecks": false,
-    "noImplicitAny": false,
-    "strictBindCallApply": false,
-    "forceConsistentCasingInFileNames": false,
-    "noFallthroughCasesInSwitch": false,
-    "declaration": true,
-    "allowSyntheticDefaultImports": true,
-    "jsx": "react"
-  },
-  "exclude": ["node_modules", "dist"]
-}
+//{
+//  "compilerOptions": {
+//    "module": "commonjs",
+//    "removeComments": true,
+//    "emitDecoratorMetadata": true,
+//    "experimentalDecorators": true,
+//    "target": "es2017",
+//    "sourceMap": true,
+//    "outDir": "./dist",
+//    "baseUrl": "./",
+//    "incremental": true,
+//    "skipLibCheck": true,
+//    "strictNullChecks": false,
+//    "noImplicitAny": false,
+//    "strictBindCallApply": false,
+//    "forceConsistentCasingInFileNames": false,
+//    "noFallthroughCasesInSwitch": false,
+//    "declaration": true,
+//    "allowSyntheticDefaultImports": true,
+//    "jsx": "react"
+//  },
+//  "exclude": ["node_modules", "dist"]
+//}
