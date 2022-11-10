@@ -2,7 +2,8 @@
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.PreviewWidget = void 0;
 const React = require("react");
-const globalStyles_1 = require("./globalStyles");
+require("antd/dist/antd.min.css");
+require("@formily/antd/dist/antd.css");
 const antd_1 = require("@formily/antd");
 const core_1 = require("@formily/core");
 const react_1 = require("@formily/react");
@@ -474,7 +475,6 @@ const fromData = {
 };
 const Preview = () => {
     return (React.createElement("div", null,
-        React.createElement(globalStyles_1.default, null),
         React.createElement(exports.PreviewWidget, { tree: fromData })));
 };
 exports.default = Preview;
