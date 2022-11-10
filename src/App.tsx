@@ -82,7 +82,7 @@ const SchemaField = createSchemaField({
     },
 })
 
-function PreviewWidget (props: PreviewWidgetProps) {
+export const PreviewWidget: React.FC<PreviewWidgetProps> = (props) => {
     const form = React.useMemo(() => createForm(), []);
     const { form: formProps, schema } = props.tree
     return (
@@ -102,8 +102,13 @@ export interface FormViewComponentProps {
     style?: React.CSSProperties
 }
 
-function Preview(data: FormViewComponentProps) {
-    return <PreviewWidget tree={data.initialJson} />
-}
+const Preview: React.FC<FormViewComponentProps> = (data: FormViewComponentProps) => {
+
+    return (
+        <div>
+            <PreviewWidget tree={data.initialJson} />
+        </div>
+    )
+};
 
 export default Preview;
