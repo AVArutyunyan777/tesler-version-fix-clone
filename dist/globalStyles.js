@@ -1,6 +1,7 @@
-import { createGlobalStyle } from 'styled-components';
-
-const GlobalStyle = createGlobalStyle`
+"use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
+const styled_components_1 = require("styled-components");
+const GlobalStyle = (0, styled_components_1.createGlobalStyle) `
   //.dn-settings-panel {
   //  width: 400px;
   //}
@@ -72,6 +73,6 @@ const GlobalStyle = createGlobalStyle`
   //.dn-viewport {
   //  padding-bottom: 36px;
   //}
-`
-
-export default GlobalStyle;
+`;
+exports.default = GlobalStyle;
+//# sourceMappingURL=globalStyles.js.map
