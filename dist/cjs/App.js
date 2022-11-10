@@ -11,7 +11,6 @@ var __rest = (this && this.__rest) || function (s, e) {
     return t;
 };
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.PreviewWidget = void 0;
 const React = require("react");
 require("antd/dist/antd.min.css");
 require("@formily/antd/dist/antd.css");
@@ -57,17 +56,15 @@ const SchemaField = (0, react_1.createSchemaField)({
         Text
     },
 });
-const PreviewWidget = (props) => {
+function PreviewWidget(props) {
     const form = React.useMemo(() => (0, core_1.createForm)(), []);
     const { form: formProps, schema } = props.tree;
     return (React.createElement("div", null,
         React.createElement(antd_1.Form, Object.assign({}, formProps, { form: form }),
             React.createElement(SchemaField, { schema: schema }))));
-};
-exports.PreviewWidget = PreviewWidget;
-const Preview = (data) => {
-    return (React.createElement("div", null,
-        React.createElement(exports.PreviewWidget, { tree: data.initialJson })));
-};
-exports.default = Preview;
+}
+function Preview(data) {
+    return React.createElement(PreviewWidget, { tree: data.initialJson });
+}
+exports.default = React.memo(Preview);
 //# sourceMappingURL=App.js.map
