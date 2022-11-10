@@ -1,5 +1,6 @@
 import * as React from 'react'
-import 'antd/dist/antd.min.css';
+// import 'antd/dist/antd.min.css';
+import GlobalStyle from './globalStyles';
 import {
     Form,
     FormItem,
@@ -535,6 +536,7 @@ const Preview: React.FC = () => {
 
     return (
         <div>
+            <GlobalStyle />
             <PreviewWidget tree={fromData} />
         </div>
     )

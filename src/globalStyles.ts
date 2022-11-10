@@ -1,6 +1,10 @@
 import { createGlobalStyle } from 'styled-components';
+// eslint-disable-next-line @typescript-eslint/ban-ts-comment
+// @ts-ignore
+import * as st from 'antd/dist/antd.min.css';
 
 const GlobalStyle = createGlobalStyle`
+  ${st}
   //.dn-settings-panel {
   //  width: 400px;
   //}
