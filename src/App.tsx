@@ -106,4 +106,4 @@ function Preview(data: FormViewComponentProps) {
     return <PreviewWidget tree={data.initialJson} />
 }
 
-export default React.memo(Preview);
+export default Preview;

@@ -66,5 +66,5 @@ function PreviewWidget(props) {
 function Preview(data) {
     return React.createElement(PreviewWidget, { tree: data.initialJson });
 }
-exports.default = React.memo(Preview);
+exports.default = Preview;
 //# sourceMappingURL=App.js.map

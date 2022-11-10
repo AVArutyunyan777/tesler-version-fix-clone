@@ -10,5 +10,4 @@ export interface FormViewComponentProps {
     style?: React.CSSProperties;
 }
 declare function Preview(data: FormViewComponentProps): JSX.Element;
-declare const _default: React.MemoExoticComponent<typeof Preview>;
-export default _default;
+export default Preview;
