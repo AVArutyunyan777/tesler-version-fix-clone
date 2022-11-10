@@ -1,7 +1,9 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
 const styled_components_1 = require("styled-components");
+const st = require("antd/dist/antd.min.css");
 const GlobalStyle = (0, styled_components_1.createGlobalStyle) `
+  ${st}
   //.dn-settings-panel {
   //  width: 400px;
   //}

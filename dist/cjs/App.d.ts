@@ -1,5 +1,4 @@
 import * as React from 'react';
-import 'antd/dist/antd.min.css';
 import { IFormilySchema } from '@designable/formily-transformer';
 export interface PreviewWidgetProps {
     tree: IFormilySchema;
