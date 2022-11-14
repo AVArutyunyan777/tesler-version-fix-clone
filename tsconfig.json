@@ -17,7 +17,10 @@
     "noFallthroughCasesInSwitch": false,
     "declaration": true,
     "allowSyntheticDefaultImports": true,
-    "jsx": "react"
+    "jsx": "react",
+    "esModuleInterop": true,
+    "emitDeclarationOnly": true,
+    "allowJs": true
   },
   "exclude": ["node_modules", "dist"]
 }
