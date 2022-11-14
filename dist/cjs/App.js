@@ -14,6 +14,7 @@ Object.defineProperty(exports, "__esModule", { value: true });
 exports.PreviewWidget = void 0;
 const React = require("react");
 require("antd/dist/antd.min.css");
+require("@formily/antd/esm/style.less");
 const antd_1 = require("@formily/antd");
 const core_1 = require("@formily/core");
 const react_1 = require("@formily/react");
