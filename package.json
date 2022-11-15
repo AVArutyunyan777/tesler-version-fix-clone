@@ -1,6 +1,6 @@
 {
   "name": "tesler-version-fix-clone",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
@@ -72,23 +72,8 @@
     "webpack-dev-server": "^4.11.1"
   },
   "dependencies": {
-    "@designable/core": "1.0.0-beta.45",
-    "@designable/formily-setters": "1.0.0-beta.45",
-    "@designable/formily-transformer": "1.0.0-beta.45",
-    "@designable/react": "1.0.0-beta.45",
-    "@designable/react-settings-form": "1.0.0-beta.45",
-    "@designable/shared": "^1.0.0-beta.45",
-    "@formily/antd": "^2.0.2",
-    "@formily/core": "^2.0.2",
-    "@formily/json-schema": "^2.0.2",
-    "@formily/path": "^2.0.2",
-    "@formily/react": "^2.0.2",
-    "@formily/reactive": "^2.0.2",
-    "@formily/reactive-react": "2.0.2",
-    "@formily/shared": "^2.0.2",
     "@types/react": "^18.0.25",
     "@types/react-dom": "^18.0.8",
-    "antd": "^4.0.0",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "rimraf": "^3.0.2"
