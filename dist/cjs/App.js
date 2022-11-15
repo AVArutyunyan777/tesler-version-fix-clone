@@ -10,21 +10,23 @@ var __rest = (this && this.__rest) || function (s, e) {
         }
     return t;
 };
+var __importDefault = (this && this.__importDefault) || function (mod) {
+    return (mod && mod.__esModule) ? mod : { "default": mod };
+};
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.PreviewWidget = void 0;
-const React = require("react");
+const react_1 = __importDefault(require("react"));
 require("antd/dist/antd.min.css");
 require("@formily/antd/esm/style.less");
 const antd_1 = require("@formily/antd");
 const core_1 = require("@formily/core");
-const react_1 = require("@formily/react");
-const antd_2 = require("antd");
+const react_2 = require("@formily/react");
 const Text = (_a) => {
     var { value, mode, content } = _a, props = __rest(_a, ["value", "mode", "content"]);
     const tagName = mode === 'normal' || !mode ? 'div' : mode;
-    return React.createElement(tagName, props, value || content);
+    return react_1.default.createElement(tagName, props, value || content);
 };
-const SchemaField = (0, react_1.createSchemaField)({
+const SchemaField = (0, react_2.createSchemaField)({
     components: {
         Space: antd_1.Space,
         FormGrid: antd_1.FormGrid,
@@ -51,24 +53,25 @@ const SchemaField = (0, react_1.createSchemaField)({
         Transfer: antd_1.Transfer,
         TreeSelect: antd_1.TreeSelect,
         Upload: antd_1.Upload,
-        Card: antd_2.Card,
-        Slider: antd_2.Slider,
-        Rate: antd_2.Rate,
+        // Card,
+        // Slider,
+        // Rate,
         Text
     },
 });
+console.log(SchemaField);
 const PreviewWidget = (props) => {
-    const form = React.useMemo(() => (0, core_1.createForm)(), []);
+    const form = react_1.default.useMemo(() => (0, core_1.createForm)(), []);
     const { form: formProps, schema } = props.tree;
-    return (React.createElement("div", null,
-        React.createElement(antd_1.Form, Object.assign({}, formProps, { form: form }),
-            React.createElement(SchemaField, { schema: schema }))));
+    return (react_1.default.createElement("div", null,
+        react_1.default.createElement(antd_1.Form, Object.assign({}, formProps, { form: form }),
+            react_1.default.createElement(SchemaField, { schema: schema }))));
 };
 exports.PreviewWidget = PreviewWidget;
 const Preview = (data) => {
     const schema = data.initialJson;
-    return (React.createElement("div", null,
-        React.createElement(exports.PreviewWidget, { tree: schema })));
+    return (react_1.default.createElement("div", null,
+        react_1.default.createElement(exports.PreviewWidget, { tree: schema })));
 };
 exports.default = Preview;
 //# sourceMappingURL=App.js.map

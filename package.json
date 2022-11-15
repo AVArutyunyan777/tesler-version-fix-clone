@@ -1,19 +1,22 @@
 {
   "name": "tesler-version-fix-clone",
-  "version": "1.1.14",
+  "version": "1.1.15",
   "description": "",
-  "main": "./dist/index.js",
-  "module": "./dist/index.js",
-  "types": "./dist/index.d.ts",
-  "typings": "./src/index",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "files": [
+    "dist/*"
+  ],
   "scripts": {
     "dev": "cross-env NODE_ENV=development webpack-dev-server",
     "build": "cross-env NODE_ENV=production webpack",
-    "build:ts": "rimraf dist && tsc -p tsconfig.build.json",
     "build:prod": "rimraf dist && yarn build:esm && yarn build:cjs",
     "build:esm": "tsc",
     "build:cjs": "tsc --module commonjs --outDir dist/cjs",
     "start": "serve dist",
+    "build:mjs": "tsc -p tsconfig-mjs.json",
+    "build:a": "tsc -p tsconfig.json",
+    "build:ts": "yarn build:esm && yarn build:cjs",
     "lint": "eslint src/**/*.{js,jsx,ts,tsx,json}",
     "lint:fix": "eslint --fix 'src/**/*.{js,jsx,ts,tsx,json}'",
     "format": "prettier --write 'src/**/*.{js,jsx,ts,tsx,css,md,json}' --config ./.prettierrc"
@@ -34,10 +37,10 @@
     "@babel/preset-env": "^7.20.2",
     "@babel/preset-react": "^7.18.6",
     "@babel/preset-typescript": "^7.18.6",
+    "@babel/runtime": "^7.20.1",
     "@types/node": "^18.11.9",
     "@types/react": "^18.0.25",
     "@types/react-dom": "^18.0.8",
-    "@types/resize-observer-browser": "^0.1.7",
     "@typescript-eslint/eslint-plugin": "^5.42.1",
     "@typescript-eslint/parser": "^5.42.1",
     "babel-loader": "^9.1.0",
@@ -74,17 +77,20 @@
     "@designable/formily-transformer": "1.0.0-beta.45",
     "@designable/react": "1.0.0-beta.45",
     "@designable/react-settings-form": "1.0.0-beta.45",
+    "@designable/shared": "^1.0.0-beta.45",
     "@formily/antd": "^2.0.2",
     "@formily/core": "^2.0.2",
+    "@formily/json-schema": "^2.0.2",
+    "@formily/path": "^2.0.2",
     "@formily/react": "^2.0.2",
     "@formily/reactive": "^2.0.2",
+    "@formily/reactive-react": "2.0.2",
     "@formily/shared": "^2.0.2",
     "@types/react": "^18.0.25",
     "@types/react-dom": "^18.0.8",
     "antd": "^4.0.0",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
-    "rimraf": "^3.0.2",
-    "styled-components": "^5.3.6"
+    "rimraf": "^3.0.2"
   }
 }

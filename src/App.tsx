@@ -1,4 +1,4 @@
-import * as React from 'react'
+import React from 'react'
 import 'antd/dist/antd.min.css';
 import '@formily/antd/esm/style.less';
 import {
@@ -32,7 +32,7 @@ import {
 import {IFormilySchema} from '@designable/formily-transformer';
 import {createForm} from '@formily/core';
 import {createSchemaField} from '@formily/react';
-import { Card, Slider, Rate } from 'antd';
+// import {Card} from 'antd';
 
 
 export interface PreviewWidgetProps {
@@ -75,16 +75,20 @@ const SchemaField = createSchemaField({
         Transfer,
         TreeSelect,
         Upload,
-        Card,
-        Slider,
-        Rate,
+        // Card,
+        // Slider,
+        // Rate,
         Text
     },
 })
 
-export const PreviewWidget: React.FC<PreviewWidgetProps> = (props) => {
+console.log(SchemaField)
+
+export const PreviewWidget: React.FC<PreviewWidgetProps> = (props: PreviewWidgetProps) => {
     const form = React.useMemo(() => createForm(), []);
     const { form: formProps, schema } = props.tree
+
+
     return (
         <div>
             <Form
