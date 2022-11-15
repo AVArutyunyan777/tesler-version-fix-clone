@@ -47,7 +47,10 @@ const config = {
                         loader: 'less-loader',
                         options: {
                             lessOptions: {
-                                javascriptEnabled: true
+                                javascriptEnabled: true,
+                                modifyVars: {
+                                    'root-entry-name': 'default',
+                                }
                             },
                         },
                     },
