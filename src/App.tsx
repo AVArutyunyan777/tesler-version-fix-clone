@@ -1,6 +1,6 @@
 import React from 'react'
-import 'antd/dist/antd.less';
-import '@formily/antd/esm/style.less';
+// import 'antd/dist/antd.less';
+// import '@formily/antd/esm/style.less';
 import {
     Form,
     FormItem,

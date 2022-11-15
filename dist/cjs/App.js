@@ -16,8 +16,8 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.PreviewWidget = void 0;
 const react_1 = __importDefault(require("react"));
-require("antd/dist/antd.less");
-require("@formily/antd/esm/style.less");
+// import 'antd/dist/antd.less';
+// import '@formily/antd/esm/style.less';
 const antd_1 = require("@formily/antd");
 const core_1 = require("@formily/core");
 const react_2 = require("@formily/react");
