@@ -1,6 +1,6 @@
 import * as React from 'react'
-// import 'antd/dist/antd.min.css';
-// import '@formily/antd/esm/style.less';
+import 'antd/dist/antd.min.css';
+import '@formily/antd/esm/style.less';
 import {
     Form,
     FormItem,
@@ -87,28 +87,27 @@ export const PreviewWidget: React.FC<PreviewWidgetProps> = (props) => {
     const { form: formProps, schema } = props.tree
     return (
         <div>
-           <h1>hello tesler</h1>
+            <Form
+                {...formProps}
+                form={form}
+            >
+                <SchemaField schema={schema} />
+            </Form>
         </div>
     )
 }
 
-// <Form
-//     {...formProps}
-//     form={form}
-// >
-//     <SchemaField schema={schema} />
-// </Form>
-
 export interface FormViewComponentProps {
-    initialJson: IFormilySchema
+    initialJson: any
     style?: React.CSSProperties
 }
 
 const Preview: React.FC<FormViewComponentProps> = (data: FormViewComponentProps) => {
 
+    const schema: IFormilySchema = data.initialJson
     return (
         <div>
-            <PreviewWidget tree={data.initialJson} />
+            <PreviewWidget tree={schema} />
         </div>
     )
 };

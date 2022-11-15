@@ -15,7 +15,12 @@ const config = {
     output: {
         // eslint-disable-next-line no-undef
         path: resolve(__dirname, 'dist'),
-        filename: '[name].js',
+        filename: 'index.js',
+        library: 'Index',
+        libraryTarget: 'umd',
+        globalObject: 'this',
+        umdNamedDefine: true
+
     },
     resolve: {
         extensions: ['.js', '.jsx', '.ts', '.tsx'],
@@ -25,12 +30,10 @@ const config = {
             {
                 test: /\.tsx?$/,
                 use: 'babel-loader',
-                exclude: /node_modules/,
             },
             {
                 test: /\.js?$/,
-                use: 'babel-loader',
-                exclude: /node_modules/,
+                use: [require.resolve('source-map-loader')],
             },
             {
                 test: /\.css$/,
