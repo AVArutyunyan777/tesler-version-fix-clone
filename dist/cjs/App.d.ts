@@ -1,12 +1,5 @@
 import React from 'react';
-import { IFormilySchema } from '@designable/formily-transformer';
-export interface PreviewWidgetProps {
-    tree: IFormilySchema;
+declare class Preview extends React.Component {
+    render(): JSX.Element;
 }
-export declare const PreviewWidget: React.FC<PreviewWidgetProps>;
-export interface FormViewComponentProps {
-    initialJson: any;
-    style?: React.CSSProperties;
-}
-declare const Preview: React.FC<FormViewComponentProps>;
 export default Preview;
